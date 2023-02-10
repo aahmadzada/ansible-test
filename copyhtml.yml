@@ -1,0 +1,13 @@
+---
+
+- name: Copy index.html to remote source
+  hosts: all
+  tasks:
+    - name: Copying Directories
+      become: true
+      copy:
+         src: /home/technolog/ansible-test/website/
+         dest: /var/www/html
+         owner: httpd
+         group: httpd
+         mode: 0644
